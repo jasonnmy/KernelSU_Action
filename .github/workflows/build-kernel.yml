@@ -131,7 +131,7 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace
         if [ ${{ env.USE_CUSTOM_GCC_64 }} = true ]; then
-          if [[ ${{ env.CUSTOM_GCC_64_SOURCE }} =~ git ]]; then
+          if [[ ${{ env.CUSTOM_GCC_64_SOURCE }} =~ gz ]]; then
               if [[ ${{ env.CUSTOM_GCC_64_SOURCE }} == *'.tar.gz' ]]; then
                 wget -O gcc-64.tar.gz ${{ env.CUSTOM_CLANG_SOURCE }}
                 mkdir gcc-64
@@ -148,7 +148,7 @@ jobs:
         fi
 
         if [ ${{ env.USE_CUSTOM_GCC_32 }} = true ]; then
-          if [[ ${{ env.CUSTOM_GCC_32_SOURCE }} =~ git ]]; then
+          if [[ ${{ env.CUSTOM_GCC_32_SOURCE }} =~ gz ]]; then
               if [[ ${{ env.CUSTOM_GCC_32_SOURCE }} == *'.tar.gz' ]]; then
                 wget -O gcc-32.tar.gz ${{ env.CUSTOM_CLANG_SOURCE }}
                 mkdir gcc-32
